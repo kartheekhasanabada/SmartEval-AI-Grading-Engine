@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 30px 18px;
+            background: linear-gradient(140deg, #d7e1ec 0%, #f7f5ff 55%, #e7f7ff 100%);
+            color: #1d1d1f;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.72);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 12px 35px rgba(20, 28, 45, 0.12);
+            padding: 26px;
+        }
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        h1 {
+            margin: 0 0 6px;
+        }
+        .logout-btn {
+            text-decoration: none;
+            background: rgba(0, 0, 0, 0.35);
+            color: #fff;
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .meta {
+            color: #4f5b77;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 14px;
+        }
+        .card {
+            border-radius: 14px;
+            padding: 14px 16px;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(8, 90, 196, 0.15);
+            box-shadow: 0 5px 16px rgba(10, 46, 110, 0.08);
+        }
+        .card.total {
+            background: linear-gradient(135deg, #007aff 0%, #56ccf2 100%);
+            color: white;
+            border: none;
+        }
+        .label {
+            margin: 0;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            opacity: 0.86;
+        }
+        .value {
+            margin: 6px 0 2px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .subvalue {
+            margin: 0;
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .empty {
+            margin-top: 14px;
+            padding: 12px;
+            border-radius: 10px;
+            background: rgba(255, 59, 48, 0.08);
+            color: #b02a24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-row">
+            <h1>Student Dashboard</h1>
+            <a class="logout-btn" href="/logout">Logout</a>
+        </div>
+        <p class="meta"><strong>User:</strong> {{ student_name }} | <strong>Student ID:</strong> {{ student_id }}</p>
+
+        {% if no_data %}
+        <div class="empty">No published evaluation found yet. Please ask your teacher to run grading.</div>
+        {% else %}
+        <div class="cards">
+            <div class="card total">
+                <p class="label">Total Score</p>
+                <p class="value">{{ total_obtained }} / {{ total_max }}</p>
+                <p class="subvalue">{{ overall_percent }}%</p>
+            </div>
+            {% for subject in subject_cards %}
+            <div class="card">
+                <p class="label">{{ subject.name }}</p>
+                <p class="value">{{ subject.obtained }} / {{ subject.max }}</p>
+                <p class="subvalue">{{ subject.percent }}%</p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

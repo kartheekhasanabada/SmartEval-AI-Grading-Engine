@@ -1,0 +1,71 @@
+.aider*
+
+# OS / editor
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+*/.venv/
+*/venv/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+.flaskenv
+*.secret
+
+# Node / frontend build output
+node_modules/
+dist/
+build/
+
+# Local binaries / archives
+*.zip
+Team 3/cloudflared.exe
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Team 1 generated runtime data
+Team 1/neww/answer_sheet_app/uploads/
+
+# Team 2 generated runtime data
+Team 2/evalsmart_v2/evalsmart/backend/uploads/
+Team 2/evalsmart_v2/evalsmart/backend/pipeline/1_images/
+Team 2/evalsmart_v2/evalsmart/backend/pipeline/2_jsons/
+Team 2/evalsmart_v2/evalsmart/backend/pipeline/3_excels/
+Team 2/evalsmart_v2/evalsmart/backend/pipeline/answer_keys/
+Team 2/evalsmart_v2/evalsmart/backend/venv/
+
+# Team 3 generated runtime data
+Team 3/incoming_uploads/
+Team 3/completed_jsons/
+Team 3/scanned_jsons/
+Team 3/answer_keys/
+Team 3/latest_run_context.json
+Team 3/*_graded.xlsx
+Team 3/*_summary.json
+Team 3/student_scan_*.xlsx
+
+# Temporary OCR / grading artifacts
+*.tmp
+*.temp

@@ -1,0 +1,26 @@
+[
+    {
+        "student_id": "101",
+        "answers": {
+            "q1": "It is a security system that controls incoming and outgoing network traffic based on strict security rules.",
+            "q2": "It is a concept in OOP where different classes can be treated as instances of the same parent class through overriding.",
+            "q3": "It is software that manages the hardware components and software applications of a computer."
+        }
+    },
+    {
+        "student_id": "102",
+        "answers": {
+            "q1": "A firewall blocks hackers from entering the computer network.",
+            "q2": "Polymorphism literally means having many forms.",
+            "q3": "The operating system runs the computer and its applications."
+        }
+    },
+    {
+        "student_id": "103",
+        "answers": {
+            "q1": "A wall made of fire.",
+            "q2": "I did not study this chapter.",
+            "q3": "Microsoft Word and Google Chrome are examples of an operating system."
+        }
+    }
+]

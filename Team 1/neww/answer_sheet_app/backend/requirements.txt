@@ -1,0 +1,21 @@
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# Pipeline dependencies (match your notebook)
+torch>=2.0.0
+torchvision>=0.15.0
+
+# AMD GPU acceleration (Radeon 860M on Windows via DirectX 12)
+# Uncomment the line below if on Windows with AMD GPU:
+# torch-directml>=0.2.0
+# On Linux with ROCm, install pytorch via:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/rocm6.1
+opencv-python-headless>=4.8.0
+Pillow>=10.0.0
+numpy>=1.24.0
+google-generativeai>=0.5.0
+
+# PDF multi-page support
+pdf2image>=1.16.0   # needs poppler-utils: sudo apt install poppler-utils  OR  brew install poppler
+pypdf>=3.0.0        # fallback if pdf2image/poppler unavailable

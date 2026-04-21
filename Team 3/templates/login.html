@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartEval Login</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            color: #1d1d1f;
+        }
+        .glass {
+            width: 100%;
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.48);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        label {
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 6px;
+        }
+        select, input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 10px;
+            margin-bottom: 14px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            border: none;
+            border-radius: 12px;
+            background: #007aff;
+            color: white;
+            padding: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .error {
+            margin-bottom: 12px;
+            color: #b00020;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .hint {
+            margin-top: 12px;
+            font-size: 12px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="glass">
+        <h2>SmartEval Login</h2>
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+        <form method="POST" action="/login">
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+            </select>
+
+            <label for="username">Username</label>
+            <input id="username" name="username" required>
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="hint">
+            Teacher demo: <b>teacher1 / admin123</b><br>
+            Student demo: <b>student / student123</b>
+        </div>
+    </div>
+</body>
+</html>

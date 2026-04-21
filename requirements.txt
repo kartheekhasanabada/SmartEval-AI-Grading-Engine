@@ -1,0 +1,35 @@
+# Root Python dependencies for the integrated SmartEval / RTP workspace.
+# Main runtime entry point: Team 3/portal.py
+
+# Web servers and APIs
+flask>=3.0.0
+flask-cors>=4.0.0
+werkzeug>=3.0.0
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+python-multipart>=0.0.9
+
+# Data processing
+pandas>=2.0.0
+openpyxl>=3.1.0
+xlrd>=2.0.1
+numpy>=1.24.0
+
+# OCR and imaging
+opencv-python-headless>=4.8.0
+Pillow>=10.0.0
+pdf2image>=1.16.0
+pypdf>=3.0.0
+pypdfium2>=4.30.0
+google-generativeai>=0.5.0
+
+# ML / grading
+torch>=2.0.0
+torchvision>=0.15.0
+torch-directml>=0.2.0; platform_system == "Windows"
+sentence-transformers>=3.0.0
+datasets>=2.18.0
+accelerate>=0.30.0
+
+# Utilities
+watchdog>=4.0.0

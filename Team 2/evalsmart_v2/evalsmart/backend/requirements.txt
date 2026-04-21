@@ -1,0 +1,6 @@
+flask
+flask-cors
+werkzeug
+pandas
+openpyxl
+xlrd

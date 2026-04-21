@@ -1,0 +1,8 @@
+{
+  "student_id": "101",
+  "answers": {
+    "q1": "It is a security system that controls incoming and outgoing network traffic based on strict security rules.",
+    "q2": "It is a concept in OOP where different classes can be treated as instances of the same parent class through overriding.",
+    "q3": "It is software that manages the hardware components and software applications of a computer."
+  }
+}
